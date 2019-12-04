@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Engineering
 {
-    class ModuleReadings
+    public class ModuleReadings
     {
         private int id;
         private int patientId;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Engineering
 {
-    class MedicalStaff
+    public class MedicalStaff
     {
         private int id;
         private string staffid;

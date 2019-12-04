@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Engineering
 {
-    class Patient
+    public class Patient
     {
         private int id;
         private string name;

@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Software_Engineering
 {
-    class DbConnector
+    public class DbConnector
     {
         MySqlConnection conn;
 

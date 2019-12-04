@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Software_Engineering
 {
-    class PatientReadings
+    public class PatientReadings
     {
         private int id;
         private int patientId;

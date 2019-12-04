@@ -7,8 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace Software_Engineering
 {
-    class PatientReadingsHandler
+    public class PatientReadingsHandler
     {
+        //Add normal data
         public void addPatientReading(MySqlConnection conn, PatientReadings pRead)
         {
             string sql = "INSERT INTO patientreadings (patientId, pulseRate, breathingRate, systolic, diastolic, " +
@@ -19,6 +20,7 @@ namespace Software_Engineering
             sqlComm.ExecuteNonQuery();
         }
 
+        //Show on the central station one
         public string displayModuleReadings(MySqlConnection conn, PatientReadings pRead, string readingNeeded)
         {
             string reading = "";

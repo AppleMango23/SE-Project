@@ -7,11 +7,17 @@ using MySql.Data.MySqlClient;
 
 namespace Software_Engineering
 {
-    class PatientHandler
+    public class PatientHandler
     {
         public int addNewPatient(MySqlConnection conn, Patient ptient)
         {
             int theBedSideId = bedSideId(conn, ptient);
+
+            //This is for unit testing
+            if(theBedSideId == 0)
+            {
+               theBedSideId = ptient.Bedsideid;
+            }
 
             string sql = "INSERT INTO patient (patientName, patientAge, patientGender, " +
                 "bedsideId) VALUES ('" + ptient.Name + "', " + ptient.Age + " , '" +

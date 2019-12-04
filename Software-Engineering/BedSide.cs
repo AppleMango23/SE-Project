@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Engineering
 {
-    class BedSide
+    public class BedSide
     {
         private int id;
         private string wing;

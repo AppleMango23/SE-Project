@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Software_Engineering
 {
-    class MedicalStaffHandler
+    public class MedicalStaffHandler
     {
         public bool checkMedicalStaffLoginDetail(MySqlConnection conn, MedicalStaff staff)
         {
