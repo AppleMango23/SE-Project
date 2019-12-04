@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Software_Engineering
 {
-    class OnShiftHandler
+    public class OnShiftHandler
     {
         public bool checkShift(MySqlConnection conn, OnShift oShift)
         {

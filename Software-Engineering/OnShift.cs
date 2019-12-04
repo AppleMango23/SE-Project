@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Engineering
 {
-    class OnShift
+    public class OnShift
     {
         private int id;
         private string staffId;

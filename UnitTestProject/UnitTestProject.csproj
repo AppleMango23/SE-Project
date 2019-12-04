@@ -49,8 +49,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestBedSide.cs" />
+    <Compile Include="UnitTestOnShiftHandler.cs" />
     <Compile Include="UnitTestMedicalStaffHandler.cs" />
     <Compile Include="UnitTestPatientReadingHandler.cs" />
     <Compile Include="UnitTestPatientHandler.cs" />
