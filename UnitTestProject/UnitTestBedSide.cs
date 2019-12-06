@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Software_Engineering;
+using System.IO;
+using System.Media;
+using System.Threading;
 
 namespace UnitTestProject
 {
@@ -8,22 +11,22 @@ namespace UnitTestProject
     public class UnitTestBedSide
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestGetSound()
         {
-            DbConnector dbC = new DbConnector();
-            string resp = dbC.connect();
-            Assert.AreEqual("Done", resp);
-
-            OnShift oShift = new OnShift();
-            oShift.StaffId = "D2";
-            oShift.DateOnShift = "04/12/2019";
-            oShift.TimeOnShift = "11:00 - 11:59";
-            oShift.DateAndTimeRegistered = "13/4/2019 5:29:15 PM";
-            oShift.DateAndTimeDeregistered = "";
-
-
-            Bedside_System UnitTest1 = new Bedside_System();
-            //UnitTest1.runMonitor();
+            //To ensure that we are able to get the file path else it will be error
+            using (SoundPlayer player = new SoundPlayer())
+            {
+                player.SoundLocation = "Sounds/criticalBeep.wav";
+                player.SoundLocation = "Sounds/riskyBeep.wav";
+                player.SoundLocation = "Sounds/normalBeep.wav";
+                player.Stop();
+            }
+        }
+        [TestMethod]
+        public void TestGetCSV()
+        {
+            //To ensure that we are able to get the file path else it will be error
+            _ = new StreamReader("CSV/ModuleReadings.csv");
         }
     }
 }
