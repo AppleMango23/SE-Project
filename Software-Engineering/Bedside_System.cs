@@ -63,13 +63,13 @@ namespace Software_Engineering
         }
 
         //Set realtime date and time
-        private void showDateTime(object sender, EventArgs e)
+        public void showDateTime(object sender, EventArgs e)
         {
             label39.Text = DateTime.Now.ToString();
         }
 
         //Start or Halt button for module readings monitor
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             if (button2.Text == "Halt")
             {
@@ -87,7 +87,7 @@ namespace Software_Engineering
         }
 
         //Function to start the monitor and retrieve some bedside and patient data
-        private void startMonitor()
+        public void startMonitor()
         {
             if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked == false && checkBox4.Checked == false)
             {
@@ -889,31 +889,31 @@ namespace Software_Engineering
         }
 
         // Detect changes in fore color at label10
-        private void label10_ForeColorChanged(object sender, EventArgs e)
+        public void label10_ForeColorChanged(object sender, EventArgs e)
         {
             getSoundBeep();
         }
 
         // Detect changes in fore color at label11
-        private void label11_ForeColorChanged(object sender, EventArgs e)
+        public void label11_ForeColorChanged(object sender, EventArgs e)
         {
             getSoundBeep();
         }
 
         // Detect changes in fore color at label12
-        private void label12_ForeColorChanged(object sender, EventArgs e)
+        public void label12_ForeColorChanged(object sender, EventArgs e)
         {
             getSoundBeep();
         }
 
         // Detect changes in fore color at label13
-        private void label13_ForeColorChanged(object sender, EventArgs e)
+        public void label13_ForeColorChanged(object sender, EventArgs e)
         {
             getSoundBeep();
         }
 
         //Stop beep sound and monitor while closing
-        private void Bedside_System_FormClosed(object sender, FormClosedEventArgs e)
+        public void Bedside_System_FormClosed(object sender, FormClosedEventArgs e)
         {
             run_Monitor.Stop();
             player.Stop();
@@ -964,27 +964,27 @@ namespace Software_Engineering
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBasicPatientDetails();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBasicPatientDetails();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBasicPatientDetails();
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             getBasicPatientDetails();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             string wingSelected = (comboBox1.SelectedItem).ToString();
             string floorSelected = (comboBox2.SelectedItem).ToString();
@@ -1019,7 +1019,7 @@ namespace Software_Engineering
             }
         }
 
-        private void pictureBox14_Click(object sender, EventArgs e)
+        public void pictureBox14_Click(object sender, EventArgs e)
         {
             if(pictureBox14.BackColor == Color.FromArgb(255, 8, 8))
             {
