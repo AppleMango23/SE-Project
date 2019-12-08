@@ -38,8 +38,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label63 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -52,18 +55,27 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label60 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -172,18 +184,6 @@
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -347,6 +347,16 @@
             this.panel8.Size = new System.Drawing.Size(981, 50);
             this.panel8.TabIndex = 30;
             // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(943, 20);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(19, 22);
+            this.label63.TabIndex = 40;
+            this.label63.Text = "s";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -356,6 +366,17 @@
             this.label23.Size = new System.Drawing.Size(124, 22);
             this.label23.TabIndex = 31;
             this.label23.Text = "Max. Reading :";
+            // 
+            // textBox26
+            // 
+            this.textBox26.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.Location = new System.Drawing.Point(882, 11);
+            this.textBox26.Multiline = true;
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(55, 31);
+            this.textBox26.TabIndex = 36;
+            this.textBox26.Text = "5";
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox12
             // 
@@ -367,6 +388,16 @@
             this.textBox12.TabIndex = 18;
             this.textBox12.Text = "36.9";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(790, 14);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(77, 22);
+            this.label58.TabIndex = 35;
+            this.label58.Text = "Interval :";
             // 
             // label22
             // 
@@ -514,6 +545,26 @@
             this.panel7.Size = new System.Drawing.Size(981, 50);
             this.panel7.TabIndex = 22;
             // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(790, 21);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(77, 22);
+            this.label57.TabIndex = 34;
+            this.label57.Text = "Interval :";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(943, 21);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(19, 22);
+            this.label62.TabIndex = 39;
+            this.label62.Text = "s";
+            // 
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -524,6 +575,17 @@
             this.textBox10.TabIndex = 29;
             this.textBox10.Text = "80";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(882, 12);
+            this.textBox25.Multiline = true;
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(55, 31);
+            this.textBox25.TabIndex = 35;
+            this.textBox25.Text = "3";
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -581,6 +643,37 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(981, 50);
             this.panel5.TabIndex = 28;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(943, 19);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(19, 22);
+            this.label61.TabIndex = 38;
+            this.label61.Text = "s";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(882, 10);
+            this.textBox24.Multiline = true;
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(55, 31);
+            this.textBox24.TabIndex = 34;
+            this.textBox24.Text = "2";
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(790, 13);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(77, 22);
+            this.label56.TabIndex = 33;
+            this.label56.Text = "Interval :";
             // 
             // textBox5
             // 
@@ -649,6 +742,37 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(981, 50);
             this.panel4.TabIndex = 23;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(943, 21);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(19, 22);
+            this.label60.TabIndex = 37;
+            this.label60.Text = "s";
+            // 
+            // textBox23
+            // 
+            this.textBox23.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(882, 12);
+            this.textBox23.Multiline = true;
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(55, 31);
+            this.textBox23.TabIndex = 33;
+            this.textBox23.Text = "1";
+            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(790, 15);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(77, 22);
+            this.label55.TabIndex = 32;
+            this.label55.Text = "Interval :";
             // 
             // textBox4
             // 
@@ -1945,136 +2069,12 @@
             this.label45.TabIndex = 5;
             this.label45.Text = "Patient History Checker";
             // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(790, 15);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(77, 22);
-            this.label55.TabIndex = 32;
-            this.label55.Text = "Interval :";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(790, 13);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(77, 22);
-            this.label56.TabIndex = 33;
-            this.label56.Text = "Interval :";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(790, 21);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(77, 22);
-            this.label57.TabIndex = 34;
-            this.label57.Text = "Interval :";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(790, 14);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(77, 22);
-            this.label58.TabIndex = 35;
-            this.label58.Text = "Interval :";
-            // 
-            // textBox23
-            // 
-            this.textBox23.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(882, 12);
-            this.textBox23.Multiline = true;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(55, 31);
-            this.textBox23.TabIndex = 33;
-            this.textBox23.Text = "1";
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(882, 10);
-            this.textBox24.Multiline = true;
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(55, 31);
-            this.textBox24.TabIndex = 34;
-            this.textBox24.Text = "2";
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(882, 12);
-            this.textBox25.Multiline = true;
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(55, 31);
-            this.textBox25.TabIndex = 35;
-            this.textBox25.Text = "3";
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(882, 11);
-            this.textBox26.Multiline = true;
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(55, 31);
-            this.textBox26.TabIndex = 36;
-            this.textBox26.Text = "5";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(943, 21);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(19, 22);
-            this.label60.TabIndex = 37;
-            this.label60.Text = "s";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(943, 19);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(19, 22);
-            this.label61.TabIndex = 38;
-            this.label61.Text = "s";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(943, 21);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(19, 22);
-            this.label62.TabIndex = 39;
-            this.label62.Text = "s";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(943, 20);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(19, 22);
-            this.label63.TabIndex = 40;
-            this.label63.Text = "s";
-            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(4112, 889);
+            this.ClientSize = new System.Drawing.Size(1924, 889);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel10);

@@ -28,8 +28,6 @@ namespace Software_Engineering
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
 
-            ModuleReadingsHandler mReadingsHnd = new ModuleReadingsHandler();
-
             //Graph Section
             if (allData[4] != "Blood Pressure")
             {

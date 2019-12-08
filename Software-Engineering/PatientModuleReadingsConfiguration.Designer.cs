@@ -300,11 +300,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 55);
+            this.label7.Location = new System.Drawing.Point(46, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 22);
+            this.label7.Size = new System.Drawing.Size(64, 22);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Campus : ";
+            this.label7.Text = "Wing : ";
             // 
             // label2
             // 

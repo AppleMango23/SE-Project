@@ -20,13 +20,17 @@ namespace Software_Engineering
         public static SoundPlayer player = new SoundPlayer();
         public static bool playingSound = false;
         public static string line;
+        List<int> readingsList = new List<int>();
 
+        public static int realCounter = 0;
         public static int counter = 0;
         public static int pulseRateCounter = 0;
         public static int breathingRateCounter = 0;
         public static int bloodPressureCounter = 0;
         public static int temperatureCounter = 0;
         public static int alarm = 4;
+
+        public static int zoomPosition = 1;
 
         public static Timer run_Monitor = new Timer();
 
@@ -290,6 +294,16 @@ namespace Software_Engineering
         //Display realtime data of different modules in line graph format
         public void displayGraph(string module, bool reset, string condition)
         {
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
+
+            PatientReadingsHandler pReadingsHnd = new PatientReadingsHandler();
+            ModuleReadingsHandler mRHand = new ModuleReadingsHandler();
+
+            int maxReading = 0;
+            float maxReadingT = 0;
+            int counter = 0;
+
             //Set default value to variables
             var chart = chart1.ChartAreas[0];
             var chartChosen = chart1;
@@ -307,21 +321,45 @@ namespace Software_Engineering
                 case "Pulse Rate":
                     chart = chart1.ChartAreas[0];
                     chartChosen = chart1;
+
+                    if((label1.Text).ToString() != "No record found")
+                    {
+                        maxReading = Int32.Parse(mRHand.getModuleReading(dbConn.getConn(), "pulseRMax", (label1.Text).ToString()));
+                    }
+                    
                     break;
 
                 case "Breathing Rate":
                     chart = chart2.ChartAreas[0];
                     chartChosen = chart2;
+                    
+                    if((label1.Text).ToString() != "No record found")
+                    {
+                        maxReading = Int32.Parse(mRHand.getModuleReading(dbConn.getConn(), "breathRMax", (label1.Text).ToString()));
+                    }
+                        
                     break;
 
                 case "Blood Pressure":
                     chart = chart3.ChartAreas[0];
                     chartChosen = chart3;
+
+                    if ((label1.Text).ToString() != "No record found")
+                    {
+                        maxReading = Int32.Parse(mRHand.getModuleReading(dbConn.getConn(), "systolicMax", (label1.Text).ToString()));
+                    }
+
                     break;
 
                 case "Temperature":
                     chart = chart4.ChartAreas[0];
                     chartChosen = chart4;
+
+                    if((label1.Text).ToString() != "No record found")
+                    {
+                        maxReadingT = float.Parse(mRHand.getModuleReading(dbConn.getConn(), "tempMax", (label1.Text).ToString()));
+                    }
+                     
                     break;
             }
 
@@ -383,20 +421,52 @@ namespace Software_Engineering
                 chart.AxisY.LabelStyle.Format = "";
                 chart.AxisY.LabelStyle.IsEndLabelVisible = true;
 
-                chart.AxisX.Minimum = xMin;
-                chart.AxisX.Maximum = xMax;
-                chart.AxisY.Minimum = yMin;
-                chart.AxisY.Maximum = yMax;
-                chart.AxisX.Interval = xInt;
-                chart.AxisY.Interval = yInt;
+                if (module == "Temperature")
+                {
+                    //Minimum Value
+                    chart.AxisX.Minimum = 0;
+                    chart.AxisY.Minimum = 0;
+
+                    //Maximum Value
+                    chart.AxisX.Maximum = double.NaN;
+                    chart.AxisY.Maximum = maxReadingT + 20;
+                }
+                else
+                {
+                    //Minimum Value
+                    chart.AxisX.Minimum = 0;
+                    chart.AxisY.Minimum = 0;
+
+                    //Maximum Value
+                    chart.AxisX.Maximum = double.NaN;
+                    chart.AxisY.Maximum = maxReading + 20;
+                }
+
+                chart.AxisX.Interval = 1;
+                chart.AxisY.Interval = 1;
+                chart.AxisX.IsMarginVisible = false;
 
                 chartChosen.Series.Add(module);
                 chartChosen.Series[module].ChartType = SeriesChartType.Line;
                 chartChosen.Series[module].BorderWidth = 3;
                 chartChosen.Series[module].Color = chartColor;
 
-                chartChosen.Series[module].Points.AddXY(1, 10);
-                chartChosen.Series[module].Points.AddXY(10, 10);
+                for (int x = 0; x < realCounter; x++)
+                {
+                    chartChosen.Series[module].Points.AddXY(x, readingsList[x]);
+                    chartChosen.Series[module].Points.AddXY(x + 0.5, 0);
+                    
+                    if (x > 10)
+                    {
+                        zoomPosition = realCounter - 10;
+
+                        chart.AxisX.ScaleView.Zoom(zoomPosition, realCounter);
+                    }
+                    else
+                    {
+                        chart.AxisX.ScaleView.Zoom(1, 11);
+                    }
+                }
             }
         }
 
@@ -476,6 +546,8 @@ namespace Software_Engineering
             try
             {
                 string[] data = line.Split(',');
+
+                readingsList.Add(Int32.Parse(data[0]));
 
                 //Pulse Rate Readings
                 if (counter == pulseRateCounter && pulseRate != false)
@@ -677,6 +749,8 @@ namespace Software_Engineering
             {
                 counter++;
             }
+
+            realCounter++;
         }
 
         public void getSoundBeep()

@@ -14,6 +14,7 @@ namespace Software_Engineering
     public partial class Central_Station : Form
     {
         public static Timer check_Monitor = new Timer();
+        List<int> emergencyLevel = new List<int>();
 
         public Central_Station()
         {
@@ -26,6 +27,7 @@ namespace Software_Engineering
             comboBox2.SelectedIndex = 0;
 
             displayTimetable();
+            displayTimetable();
 
             Timer timer = new Timer();
             timer.Tick += new EventHandler(checkMonitor);
@@ -35,6 +37,19 @@ namespace Software_Engineering
 
         public void displayTimetable()
         {
+            chart1.Series.Clear();
+
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+
+            chart1.Series.Add("On Call Registered");
+            chart1.Series.Add("On Call Deregistered");
+
+            chart1.Series["On Call Registered"].ChartType = SeriesChartType.RangeBar;
+            chart1.Series["On Call Registered"].Color = Color.FromArgb(8, 255, 82);
+
+            chart1.Series["On Call Deregistered"].ChartType = SeriesChartType.RangeBar;
+            chart1.Series["On Call Deregistered"].Color = Color.FromArgb(255, 8, 74);
+
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
 
@@ -62,7 +77,7 @@ namespace Software_Engineering
 
             OnShiftHandler oSHnd = new OnShiftHandler();
 
-            foreach (var Txt in oSHnd.getOnCall(dbConn.getConn(), DateTime.Now.ToString("dd/MM/yyyy")))
+            foreach (var Txt in oSHnd.getOnCall(dbConn.getConn(), (dateTimePicker1.Value).ToString("dd/MM/yyyy")))
             {
                 while(nextCounter > 0)
                 {
@@ -176,7 +191,7 @@ namespace Software_Engineering
             chart.AxisX.Title = "Medical Staff";
             chart.AxisY.Title = "Time Slot";
 
-            chart.AxisX.Minimum = -0.5;
+            chart.AxisX.Minimum = -1;
             chart.AxisY.Minimum = 0;
             chart.AxisY.Maximum = 24;
             chart.AxisX.Interval = 1;
@@ -281,6 +296,7 @@ namespace Software_Engineering
                                     pitureBoxNum[x].BackColor = critical;
 
                                     bayButtonColorChanges();
+                                    callMedic("Critical", checkPatientId);
                                 }
                                 else if (Int32.Parse(pulseRate) < Int32.Parse(getM("pulseRMin", checkPatientId)) || 
                                          Int32.Parse(pulseRate) > Int32.Parse(getM("pulseRMax", checkPatientId)) ||
@@ -299,6 +315,7 @@ namespace Software_Engineering
                                     pitureBoxNum[x].BackColor = risky;
 
                                     bayButtonColorChanges();
+                                    callMedic("In Risk", checkPatientId);
                                 }
                                 else if (Int32.Parse(pulseRate) >= Int32.Parse(getM("pulseRMin", checkPatientId)) &&
                                          Int32.Parse(pulseRate) <= Int32.Parse(getM("pulseRMax", checkPatientId)) &&
@@ -388,6 +405,36 @@ namespace Software_Engineering
                     tagValue[x].BackColor = none;
                     pitureBoxNum[x].BackColor = none;
                 }
+            }
+        }
+
+        public void callMedic(string condition, string patientId)
+        {
+            if(condition == "Critical")
+            {
+                emergencyLevel.Add(3);
+
+                //DbConnector dbConn = new DbConnector();
+                //dbConn.connect();
+
+                //MedicalStaff mStaff = new MedicalStaff();
+
+                //if (button2.FlatAppearance.BorderColor == Color.FromArgb(8, 94, 255))
+                //{
+                //    mStaff.Location = (comboBox1.SelectedItem).ToString() + ", " + (comboBox2.SelectedItem).ToString() + ", Bay A, Bed - ";
+                //}
+                //else if (button3.FlatAppearance.BorderColor == Color.FromArgb(8, 94, 255))
+                //{
+                //    mStaff.Location = (comboBox1.SelectedItem).ToString() + ", " + (comboBox2.SelectedItem).ToString() + ", Bay B, Bed - ";
+                //}
+
+                //mStaff.Patient = patientId;
+                //mStaff.Status = condition;
+                //mStaff.DateAndTimeAlert = DateTime.Now.ToString();
+            }
+            else if(condition == "In Risk")
+            {
+                emergencyLevel.Add(2);
             }
         }
 
@@ -767,16 +814,15 @@ namespace Software_Engineering
             }
         }
 
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-            chart1.Series["On Call Registered"].Points.Clear();
-            displayTimetable();
-            chart1.Update();
-        }
-
         private void pictureBox11_Click(object sender, EventArgs e)
         {
+            Contact contactPage = new Contact();
+            contactPage.Show();
+        }
 
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            displayTimetable();
         }
     }
 }
