@@ -62,3 +62,12 @@ C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\obj\Debug\Software-Engineering.csproj.CopyComplete
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\obj\Debug\Software-Engineering.exe
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\obj\Debug\Software-Engineering.pdb
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Twilio.dll
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Twilio.xml
