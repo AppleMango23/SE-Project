@@ -279,84 +279,85 @@ namespace Software_Engineering
 
                         if(checkPatientId != "No record found")
                         {
-                            pRead.PatientId = Int32.Parse(checkPatientId);
-                            string pulseRate = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "pulseRate");
-                            string breathingRate = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "breathingRate");
-                            string systolic = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "systolic");
-                            string diastolic = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "diastolic");
-                            string temperature = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "temperature");
-                            string dateAndTime = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "dateAndTime");
+                            //pRead.PatientId = Int32.Parse(checkPatientId);
+                            //string pulseRate = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "pulseRate");
+                            //string breathingRate = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "breathingRate");
+                            //string systolic = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "systolic");
+                            //string diastolic = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "diastolic");
+                            //string temperature = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "temperature");
+                            //string dateAndTime = pReadHnd.displayModuleReadings(dbConn.getConn(), pRead, "dateAndTime");
 
-                            if (DateTime.Now.ToString() == dateAndTime)
+                            foreach(var display in pReadHnd.showReadings(dbConn.getConn(), checkPatientId))
                             {
-                                if (Int32.Parse(pulseRate) == 0 || Int32.Parse(breathingRate) == 0 ||
-                                    Int32.Parse(systolic) == 0 || Int32.Parse(diastolic) == 0 ||
-                                    float.Parse(temperature) == 0)
+                                if (display.PulseRate != 999)
                                 {
-                                    buttonNum[x].BackColor = critical;
-                                    tagName[x].BackColor = critical;
-                                    tagValue[x].BackColor = critical;
-                                    pitureBoxNum[x].BackColor = critical;
+                                    if (display.PulseRate == 0 || display.BreathingRate == 0 || display.Systolic == 0 || display.Diastolic == 0 || display.Temperature == 0)
+                                    {
+                                        buttonNum[x].BackColor = critical;
+                                        tagName[x].BackColor = critical;
+                                        tagValue[x].BackColor = critical;
+                                        pitureBoxNum[x].BackColor = critical;
+
+                                        bayButtonColorChanges();
+                                    }
+                                    else if (display.PulseRate < Int32.Parse(getM("pulseRMin", checkPatientId)) ||
+                                             display.PulseRate > Int32.Parse(getM("pulseRMax", checkPatientId)) ||
+                                             display.BreathingRate < Int32.Parse(getM("breathRMin", checkPatientId)) ||
+                                             display.BreathingRate > Int32.Parse(getM("breathRMax", checkPatientId)) ||
+                                             display.Systolic < Int32.Parse(getM("systolicMin", checkPatientId)) ||
+                                             display.Systolic > Int32.Parse(getM("systolicMax", checkPatientId)) ||
+                                             display.Diastolic < Int32.Parse(getM("diastolicMin", checkPatientId)) ||
+                                             display.Diastolic > Int32.Parse(getM("diastolicMax", checkPatientId)) ||
+                                             display.Temperature < float.Parse(getM("tempMin", checkPatientId)) ||
+                                             display.Temperature > float.Parse(getM("tempMax", checkPatientId)))
+                                    {
+                                        buttonNum[x].BackColor = risky;
+                                        tagName[x].BackColor = risky;
+                                        tagValue[x].BackColor = risky;
+                                        pitureBoxNum[x].BackColor = risky;
+
+                                        bayButtonColorChanges();
+                                        callMedic();
+                                    }
+                                    else if (display.PulseRate >= Int32.Parse(getM("pulseRMin", checkPatientId)) &&
+                                             display.PulseRate <= Int32.Parse(getM("pulseRMax", checkPatientId)) &&
+                                             display.BreathingRate >= Int32.Parse(getM("breathRMin", checkPatientId)) &&
+                                             display.BreathingRate <= Int32.Parse(getM("breathRMax", checkPatientId)) &&
+                                             display.Systolic >= Int32.Parse(getM("systolicMin", checkPatientId)) &&
+                                             display.Systolic <= Int32.Parse(getM("systolicMax", checkPatientId)) &&
+                                             display.Diastolic >= Int32.Parse(getM("diastolicMin", checkPatientId)) &&
+                                             display.Diastolic <= Int32.Parse(getM("diastolicMax", checkPatientId)) &&
+                                             display.Temperature >= float.Parse(getM("tempMin", checkPatientId)) &&
+                                             display.Temperature <= float.Parse(getM("tempMax", checkPatientId)))
+                                    {
+                                        buttonNum[x].BackColor = normal;
+                                        tagName[x].BackColor = normal;
+                                        tagValue[x].BackColor = normal;
+                                        pitureBoxNum[x].BackColor = normal;
+
+                                        bayButtonColorChanges();
+                                    }
+
+                                    tagValue[x].Text =
+                                      ": " + display.PulseRate + "\n" +
+                                      ": " + display.BreathingRate + "\n" +
+                                      ": " + display.Systolic + "/" + display.Diastolic + "\n" +
+                                      ": " + display.Temperature + "°C";
+                                }
+                                else
+                                {
+                                    tagValue[x].Text = ": -\n" +
+                                    ": -\n" +
+                                    ": -/-\n" +
+                                    ": -°C";
+
+                                    buttonNum[x].BackColor = none;
+                                    tagName[x].BackColor = none;
+                                    tagValue[x].BackColor = none;
+                                    pitureBoxNum[x].BackColor = none;
 
                                     bayButtonColorChanges();
                                 }
-                                else if (Int32.Parse(pulseRate) < Int32.Parse(getM("pulseRMin", checkPatientId)) || 
-                                         Int32.Parse(pulseRate) > Int32.Parse(getM("pulseRMax", checkPatientId)) ||
-                                         Int32.Parse(breathingRate) < Int32.Parse(getM("breathRMin", checkPatientId)) ||
-                                         Int32.Parse(breathingRate) > Int32.Parse(getM("breathRMax", checkPatientId)) ||
-                                         Int32.Parse(systolic) < Int32.Parse(getM("systolicMin", checkPatientId)) ||
-                                         Int32.Parse(systolic) > Int32.Parse(getM("systolicMax", checkPatientId)) ||
-                                         Int32.Parse(diastolic) < Int32.Parse(getM("diastolicMin", checkPatientId)) ||
-                                         Int32.Parse(diastolic) > Int32.Parse(getM("diastolicMax", checkPatientId)) ||
-                                         float.Parse(temperature) < float.Parse(getM("tempMin", checkPatientId)) ||
-                                         float.Parse(temperature) > float.Parse(getM("tempMax", checkPatientId)))
-                                {
-                                    buttonNum[x].BackColor = risky;
-                                    tagName[x].BackColor = risky;
-                                    tagValue[x].BackColor = risky;
-                                    pitureBoxNum[x].BackColor = risky;
-
-                                    bayButtonColorChanges();
-                                    callMedic();
-                                }
-                                else if (Int32.Parse(pulseRate) >= Int32.Parse(getM("pulseRMin", checkPatientId)) &&
-                                         Int32.Parse(pulseRate) <= Int32.Parse(getM("pulseRMax", checkPatientId)) &&
-                                         Int32.Parse(breathingRate) >= Int32.Parse(getM("breathRMin", checkPatientId)) &&
-                                         Int32.Parse(breathingRate) <= Int32.Parse(getM("breathRMax", checkPatientId)) &&
-                                         Int32.Parse(systolic) >= Int32.Parse(getM("systolicMin", checkPatientId)) &&
-                                         Int32.Parse(systolic) <= Int32.Parse(getM("systolicMax", checkPatientId)) &&
-                                         Int32.Parse(diastolic) >= Int32.Parse(getM("diastolicMin", checkPatientId)) &&
-                                         Int32.Parse(diastolic) <= Int32.Parse(getM("diastolicMax", checkPatientId)) &&
-                                         float.Parse(temperature) >= float.Parse(getM("tempMin", checkPatientId)) &&
-                                         float.Parse(temperature) <= float.Parse(getM("tempMax", checkPatientId)))
-                                {
-                                    buttonNum[x].BackColor = normal;
-                                    tagName[x].BackColor = normal;
-                                    tagValue[x].BackColor = normal;
-                                    pitureBoxNum[x].BackColor = normal;
-
-                                    bayButtonColorChanges();
-                                }
-
-                                tagValue[x].Text =
-                                  ": " + pulseRate + "\n" +
-                                  ": " + breathingRate + "\n" +
-                                  ": " + systolic + "/" + diastolic + "\n" +
-                                  ": " + temperature + "°C";
-                            }
-                            else
-                            {
-                                tagValue[x].Text = ": -\n" +
-                                  ": -\n" +
-                                  ": -/-\n" +
-                                  ": -°C";
-
-                                buttonNum[x].BackColor = none;
-                                tagName[x].BackColor = none;
-                                tagValue[x].BackColor = none;
-                                pitureBoxNum[x].BackColor = none;
-
-                                bayButtonColorChanges();
                             }
                         }
                         else
@@ -412,12 +413,9 @@ namespace Software_Engineering
 
         public void callMedic()
         {
-            Console.WriteLine(messageSent);
-
             if(messageSent == false)
             {
-                MessageBox.Show("Message Sent.");
-
+                Console.WriteLine("Message Sent.");
                 //const string accountSid = "AC9484e6b8bf0276b14fdd4a41d74b818b";
                 //const string authToken = "9c6eb9d51199eedbfc9d39ff3810d183";
 

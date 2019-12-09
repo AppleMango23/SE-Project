@@ -39,7 +39,8 @@ namespace Software_Engineering
         public bool registerShift(MySqlConnection conn, OnShift oShift)
         {
             string sql = "INSERT INTO onshift (staffId, dateOnShift, timeOnShift, dateAndTimeRegistered, dateAndTimeDeregistered) " +
-                "VALUES ('" + oShift.StaffId + "', '" + oShift.DateOnShift + "' ,'" + oShift.TimeOnShift + "' , '" + oShift.DateAndTimeRegistered + "', '" +
+                "VALUES ('" + oShift.StaffId + "', '" + oShift.DateOnShift + "' ,'" + oShift.TimeOnShift + "' , '" + 
+                oShift.DateAndTimeRegistered + "', '" +
                 oShift.DateAndTimeDeregistered + "')";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
@@ -52,7 +53,8 @@ namespace Software_Engineering
         {
             Console.WriteLine(oShift.TimeOnShift);
             string sql = "UPDATE `onshift` SET `dateAndTimeDeregistered`='" + 
-                oShift.DateAndTimeDeregistered + "' WHERE `staffId`='" + oShift.StaffId + "' AND `dateOnShift` = '" + oShift.DateOnShift + "' AND" +
+                oShift.DateAndTimeDeregistered + "' WHERE `staffId`='" + oShift.StaffId + "' AND `dateOnShift` = '" + 
+                oShift.DateOnShift + "' AND" +
                 "`timeOnShift` = '" + oShift.TimeOnShift + "'";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);

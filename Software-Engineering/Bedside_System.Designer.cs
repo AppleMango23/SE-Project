@@ -470,7 +470,7 @@
             chartArea1.Position.Height = 100F;
             chartArea1.Position.Width = 100F;
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(203, 157);
+            this.chart1.Location = new System.Drawing.Point(203, 143);
             this.chart1.Name = "chart1";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
@@ -496,7 +496,7 @@
             chartArea2.Position.Height = 100F;
             chartArea2.Position.Width = 100F;
             this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Location = new System.Drawing.Point(203, 333);
+            this.chart2.Location = new System.Drawing.Point(203, 320);
             this.chart2.Name = "chart2";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
@@ -522,7 +522,7 @@
             chartArea3.Position.Height = 100F;
             chartArea3.Position.Width = 100F;
             this.chart3.ChartAreas.Add(chartArea3);
-            this.chart3.Location = new System.Drawing.Point(203, 507);
+            this.chart3.Location = new System.Drawing.Point(203, 492);
             this.chart3.Name = "chart3";
             series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
@@ -548,7 +548,7 @@
             chartArea4.Position.Height = 100F;
             chartArea4.Position.Width = 100F;
             this.chart4.ChartAreas.Add(chartArea4);
-            this.chart4.Location = new System.Drawing.Point(203, 685);
+            this.chart4.Location = new System.Drawing.Point(203, 672);
             this.chart4.Name = "chart4";
             series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";

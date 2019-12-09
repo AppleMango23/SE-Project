@@ -11,25 +11,16 @@ namespace Software_Engineering
     {
         public void updatePatientBedsideId(MySqlConnection conn, ModuleReadings moduleRConf, int thePatientId, string type)
         {
-            string sql = "";
-
-            if (type == "New")
-            {
-                sql = "INSERT INTO modulesreading (patientId, pulseRMin, pulseRMax, pulseRIntTime, PRmodifiedTime, " +
+            string sql = "INSERT INTO modulesreading (patientId, pulseRMin, pulseRMax, pulseRIntTime, PRmodifiedTime, " +
                     "breathRMin, breathRMax, breathRIntTime, BRmodifiedTime, " +
                     "systolicMin, systolicMax, diastolicMin, diastolicMax, bloodPIntTime, BPmodifiedTime, " +
-                    "tempMin, tempMax, tempIntTime, TEMPmodifiedTime) VALUES (" + 
-                    thePatientId + ", " + moduleRConf.MinPulse + " , " + moduleRConf.MaxPulse + ", " + moduleRConf.PulseIntTime + " , '" + moduleRConf.PRModifiedTime + "', " +
-                    moduleRConf.MinBreath + ", " + moduleRConf.MaxBreath + ", " + moduleRConf.BreathIntTime + " , '" + moduleRConf.BRModifiedTime + "', " +
-                    moduleRConf.MinSystolic + ", " + moduleRConf.MaxSystolic + ", " + moduleRConf.MinDiastolic + ", " + moduleRConf.MaxDiastolic + ", " + moduleRConf.PressureIntTime + " , '" + moduleRConf.BPModifiedTime + "', " +
-                    moduleRConf.MinTemp + ", " + moduleRConf.MaxTemp + ", " + moduleRConf.TempIntTime + " , '" + moduleRConf.TempModifiedTime + "')";
-            }
-            //else if (type == "Reset")
-            //{
-            //    sql = "INSERT INTO modulesreading (patientId, pulseRMin, pulseRMax, breathRMin, breathRMax, " +
-            //    "systolicMin, systolicMax, diastolicMin, diastolicMax,tempMin, tempMax) VALUES (" + moduleRConf.PatientId + ", " +
-            //    "60, 100, 12, 20, 80, 120, 60, 80, 35.2, 36.9)";
-            //}
+                    "tempMin, tempMax, tempIntTime, TEMPmodifiedTime) VALUES (" +
+                    thePatientId + ", " + moduleRConf.MinPulse + " , " + moduleRConf.MaxPulse + ", " + moduleRConf.PulseIntTime +
+                    " , '" + moduleRConf.PRModifiedTime + "', " + moduleRConf.MinBreath + ", " + moduleRConf.MaxBreath + ", " +
+                    moduleRConf.BreathIntTime + " , '" + moduleRConf.BRModifiedTime + "', " + moduleRConf.MinSystolic + ", " +
+                    moduleRConf.MaxSystolic + ", " + moduleRConf.MinDiastolic + ", " + moduleRConf.MaxDiastolic + ", " +
+                    moduleRConf.PressureIntTime + " , '" + moduleRConf.BPModifiedTime + "', " + moduleRConf.MinTemp + ", " +
+                    moduleRConf.MaxTemp + ", " + moduleRConf.TempIntTime + " , '" + moduleRConf.TempModifiedTime + "')";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             sqlComm.ExecuteNonQuery();

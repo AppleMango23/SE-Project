@@ -25,28 +25,25 @@ namespace Software_Engineering
         //Onclick "Login" button verify username & password and navigate to Bedside System Page
         private void button1_Click(object sender, EventArgs e)
         {
-            //DbConnector dbConn = new DbConnector();
-            //dbConn.connect();
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
 
-            //MedicalStaff mStaff = new MedicalStaff();
-            //MedicalStaffHandler mStaffHnd = new MedicalStaffHandler();
+            MedicalStaff mStaff = new MedicalStaff();
+            MedicalStaffHandler mStaffHnd = new MedicalStaffHandler();
 
-            //mStaff.Staffid = textBox1.Text;
-            //mStaff.Password = textBox2.Text;
+            mStaff.Staffid = textBox1.Text;
+            mStaff.Password = textBox2.Text;
 
-            //if ((mStaffHnd.checkMedicalStaffLoginDetail(dbConn.getConn(), mStaff)) == true)
-            //{
-            //    Central_Station central_station = new Central_Station();
-            //    central_station.Show();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid Username or Password.");
-            //}
-
-            Central_Station central_station = new Central_Station();
-            central_station.Show();
+            if ((mStaffHnd.checkMedicalStaffLoginDetail(dbConn.getConn(), mStaff)) == true)
+            {
+                Central_Station central_station = new Central_Station();
+                central_station.Show();
+                //this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password.");
+            }
         }
 
         //Onclick "Clear" button to clear username & password textbox

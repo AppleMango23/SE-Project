@@ -87,8 +87,11 @@ namespace Software_Engineering
                         "bedside.wing, bedside.floor, bedside.bay, bedside.bed " +
                         "FROM `patient`" +
                         "INNER JOIN `bedside` ON patient.bedsideId=bedside.bedsideId " +
-                        "WHERE patient.patientId LIKE '" + ptient.Name + "%' OR patient.patientName LIKE '" + ptient.Name + "%' OR patient.patientAge LIKE '" + ptient.Name + "%' OR patient.patientGender LIKE '" + ptient.Name + "%' OR patient.bedsideId LIKE '" + ptient.Name + "%' OR " +
-                        "bedside.wing LIKE '" + ptient.Name + "%' OR bedside.floor LIKE '" + ptient.Name + "%' OR bedside.bay LIKE '" + ptient.Name + "%' OR bedside.bed LIKE '" + ptient.Name + "%'";
+                        "WHERE patient.patientId LIKE '" + ptient.Name + "%' OR patient.patientName LIKE '" + 
+                        ptient.Name + "%' OR patient.patientAge LIKE '" + ptient.Name + "%' OR patient.patientGender LIKE '" + 
+                        ptient.Name + "%' OR patient.bedsideId LIKE '" + ptient.Name + "%' OR " +
+                        "bedside.wing LIKE '" + ptient.Name + "%' OR bedside.floor LIKE '" + ptient.Name + "%' OR " +
+                        "bedside.bay LIKE '" + ptient.Name + "%' OR bedside.bed LIKE '" + ptient.Name + "%'";
             }
             else if (num == 2)
             {
