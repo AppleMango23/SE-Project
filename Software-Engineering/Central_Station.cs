@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace Software_Engineering
 {
@@ -414,27 +417,36 @@ namespace Software_Engineering
             {
                 emergencyLevel.Add(3);
 
-                //DbConnector dbConn = new DbConnector();
-                //dbConn.connect();
+                const string accountSid = "AC9484e6b8bf0276b14fdd4a41d74b818b";
+                const string authToken = "9c6eb9d51199eedbfc9d39ff3810d183";
 
-                //MedicalStaff mStaff = new MedicalStaff();
+                TwilioClient.Init(accountSid, authToken);
 
-                //if (button2.FlatAppearance.BorderColor == Color.FromArgb(8, 94, 255))
-                //{
-                //    mStaff.Location = (comboBox1.SelectedItem).ToString() + ", " + (comboBox2.SelectedItem).ToString() + ", Bay A, Bed - ";
-                //}
-                //else if (button3.FlatAppearance.BorderColor == Color.FromArgb(8, 94, 255))
-                //{
-                //    mStaff.Location = (comboBox1.SelectedItem).ToString() + ", " + (comboBox2.SelectedItem).ToString() + ", Bay B, Bed - ";
-                //}
+                var message = MessageResource.Create(
+                    body: "If receive this twilio message whatsApp Noah",
+                    from: new Twilio.Types.PhoneNumber("+15304028664"),
+                    to: new Twilio.Types.PhoneNumber("+60105321558")
+                );
 
-                //mStaff.Patient = patientId;
-                //mStaff.Status = condition;
-                //mStaff.DateAndTimeAlert = DateTime.Now.ToString();
+                Console.WriteLine(message.Sid);
+
             }
             else if(condition == "In Risk")
             {
                 emergencyLevel.Add(2);
+
+                const string accountSid = "AC9484e6b8bf0276b14fdd4a41d74b818b";
+                const string authToken = "9c6eb9d51199eedbfc9d39ff3810d183";
+
+                TwilioClient.Init(accountSid, authToken);
+
+                var message = MessageResource.Create(
+                    body: "If receive this twilio message whatsApp Noah",
+                    from: new Twilio.Types.PhoneNumber("+15304028664"),
+                    to: new Twilio.Types.PhoneNumber("+60105321558")
+                );
+
+                Console.WriteLine(message.Sid);
             }
         }
 

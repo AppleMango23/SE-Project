@@ -13,7 +13,7 @@ namespace Software_Engineering
 
         public string connect()
         {
-            string connStr = "datasource=localhost;user=dbcli;database=hospitaldb;port=3306;password=dbcli123";
+            string connStr = "datasource=172.20.10.5;user=dbcli;database=hospitaldb;port=3306;password=dbcli123";
             conn = new MySqlConnection(connStr);
             try
             {
