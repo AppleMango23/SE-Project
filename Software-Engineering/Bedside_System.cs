@@ -78,6 +78,27 @@ namespace Software_Engineering
                 if (result == DialogResult.Yes)
                 {
                     haltMonitor();
+
+                    if (label1.Text != "No Record Found")
+                    {
+                        MessageBox.Show("Closed running process");
+
+                        DbConnector dbConn = new DbConnector();
+                        dbConn.connect();
+
+                        PatientReadings pRead = new PatientReadings();
+                        PatientReadingsHandler pReadHnd = new PatientReadingsHandler();
+
+                        pRead.PatientId = Int32.Parse((label1.Text).ToString());
+                        pRead.PulseRate = 999;
+                        pRead.BreathingRate = 999;
+                        pRead.Systolic = 999;
+                        pRead.Diastolic = 999;
+                        pRead.Temperature = 999;
+                        pRead.DateTime = DateTime.Now.ToString();
+
+                        pReadHnd.addPatientReading(dbConn.getConn(), pRead);
+                    }
                 }
             }
             else if (button2.Text == "Start")
@@ -917,6 +938,25 @@ namespace Software_Engineering
         {
             run_Monitor.Stop();
             player.Stop();
+
+            if(button2.Text == "Halt" && label1.Text != "No Record Found")
+            {
+                DbConnector dbConn = new DbConnector();
+                dbConn.connect();
+
+                PatientReadings pRead = new PatientReadings();
+                PatientReadingsHandler pReadHnd = new PatientReadingsHandler();
+
+                pRead.PatientId = Int32.Parse((label1.Text).ToString());
+                pRead.PulseRate = 999;
+                pRead.BreathingRate = 999;
+                pRead.Systolic = 999;
+                pRead.Diastolic = 999;
+                pRead.Temperature = 999;
+                pRead.DateTime = DateTime.Now.ToString();
+
+                pReadHnd.addPatientReading(dbConn.getConn(), pRead);
+            }
         }
 
         public void getBasicPatientDetails()

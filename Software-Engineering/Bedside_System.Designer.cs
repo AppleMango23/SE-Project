@@ -74,6 +74,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -108,9 +108,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -206,9 +206,7 @@
             " - SELECT FLOOR - ",
             "Floor 1",
             "Floor 2",
-            "Floor 3",
-            "Floor 4",
-            "Floor 5"});
+            "Floor 3"});
             this.comboBox2.Location = new System.Drawing.Point(346, 25);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(255, 30);
@@ -472,7 +470,7 @@
             chartArea1.Position.Height = 100F;
             chartArea1.Position.Width = 100F;
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(203, 157);
+            this.chart1.Location = new System.Drawing.Point(203, 143);
             this.chart1.Name = "chart1";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
@@ -498,7 +496,7 @@
             chartArea2.Position.Height = 100F;
             chartArea2.Position.Width = 100F;
             this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Location = new System.Drawing.Point(203, 333);
+            this.chart2.Location = new System.Drawing.Point(203, 320);
             this.chart2.Name = "chart2";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
@@ -524,7 +522,7 @@
             chartArea3.Position.Height = 100F;
             chartArea3.Position.Width = 100F;
             this.chart3.ChartAreas.Add(chartArea3);
-            this.chart3.Location = new System.Drawing.Point(203, 507);
+            this.chart3.Location = new System.Drawing.Point(203, 492);
             this.chart3.Name = "chart3";
             series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
@@ -550,7 +548,7 @@
             chartArea4.Position.Height = 100F;
             chartArea4.Position.Width = 100F;
             this.chart4.ChartAreas.Add(chartArea4);
-            this.chart4.Location = new System.Drawing.Point(203, 685);
+            this.chart4.Location = new System.Drawing.Point(203, 672);
             this.chart4.Name = "chart4";
             series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";
@@ -663,6 +661,30 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(381, 182);
             this.panel7.TabIndex = 44;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox14.Image = global::Software_Engineering.Properties.Resources.exclamation_mark_inside_a_circle;
+            this.pictureBox14.Location = new System.Drawing.Point(90, 90);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 23;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Software_Engineering.Properties.Resources.settings;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label39
             // 
@@ -817,30 +839,6 @@
             this.label23.Size = new System.Drawing.Size(39, 26);
             this.label23.TabIndex = 51;
             this.label23.Text = "---";
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox14.Image = global::Software_Engineering.Properties.Resources.exclamation_mark_inside_a_circle;
-            this.pictureBox14.Location = new System.Drawing.Point(90, 90);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(50, 43);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 23;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Software_Engineering.Properties.Resources.settings;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 90);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox13
             // 
@@ -1024,10 +1022,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

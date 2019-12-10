@@ -40,6 +40,33 @@ namespace Software_Engineering
             return reading;
         }
 
+        public List<PatientReadings> showReadings(MySqlConnection conn, string patientId)
+        {
+            List<PatientReadings> listOfTheReadings = new List<PatientReadings>();
+
+            string sql = "SELECT pulseRate, breathingRate, systolic, diastolic, temperature FROM `patientreadings` WHERE patientId="+ patientId + " ORDER BY patientReadingId DESC LIMIT 1";
+
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            using (MySqlDataReader sqlReader = sqlComm.ExecuteReader())
+            {
+                while (sqlReader.Read())
+                {
+                    PatientReadings mReadings = new PatientReadings();
+
+                    mReadings.PulseRate = (int)sqlReader.GetValue(0);
+                    mReadings.BreathingRate = (int)sqlReader.GetValue(1);
+                    mReadings.Systolic = (int)sqlReader.GetValue(2);
+                    mReadings.Diastolic = (int)sqlReader.GetValue(3);
+                    mReadings.Temperature = (float)sqlReader.GetValue(4);
+
+                    listOfTheReadings.Add(mReadings);
+                }
+            }
+
+            return listOfTheReadings;
+        }
+
         public List<PatientReadings> getReadings(MySqlConnection conn, int patientId, string readingNeeded)
         {
             List<PatientReadings> listOfReadings = new List<PatientReadings>();

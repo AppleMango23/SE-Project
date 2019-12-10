@@ -115,32 +115,5 @@ namespace Software_Engineering
 
             return checkId;
         }
-
-        public List<MedicalStaff> listMessages(MySqlConnection conn, BedSide bedSide)
-        {
-            List<MedicalStaff> listOfMessages = new List<MedicalStaff>();
-
-            string sql = "SELECT location, patient, status, dateAndTimeAlert FROM `messages` WHERE staffId='" + bedSide.Wing + "' AND floor='" +
-                bedSide.Floor + "' AND bay='" + bedSide.Bay + "' AND status=0;";
-
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-
-            using (MySqlDataReader sqlReader = sqlComm.ExecuteReader())
-            {
-                while (sqlReader.Read())
-                {
-                    MedicalStaff mStaff = new MedicalStaff();
-
-                    mStaff.Location = (string)sqlReader.GetValue(0);
-                    mStaff.Patient = (string)sqlReader.GetValue(1);
-                    mStaff.Status = (string)sqlReader.GetValue(2);
-                    mStaff.DateAndTimeAlert = (string)sqlReader.GetValue(3);
-
-                    listOfMessages.Add(mStaff);
-                }
-            }
-
-            return listOfMessages;
-        }
     }
 }

@@ -17,11 +17,6 @@ namespace Software_Engineering
         private string pager;
         private string password;
 
-        private string location;
-        private string patient;
-        private string status;
-        private string dateAndTimeAlert;
-
         public int Id { get => id; set => id = value; }
         public string Staffid { get => staffid; set => staffid = value; }
         public string Name { get => name; set => name = value; }
@@ -30,9 +25,5 @@ namespace Software_Engineering
         public string Contact { get => contact; set => contact = value; }
         public string Pager { get => pager; set => pager = value; }
         public string Password { get => password; set => password = value; }
-        public string Location { get => location; set => location = value; }
-        public string Patient { get => patient; set => patient = value; }
-        public string Status { get => status; set => status = value; }
-        public string DateAndTimeAlert { get => dateAndTimeAlert; set => dateAndTimeAlert = value; }
     }
 }
