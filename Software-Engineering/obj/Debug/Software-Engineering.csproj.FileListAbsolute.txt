@@ -71,3 +71,35 @@ C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\Steve\Desktop\ARU\Software Engineering\Microsoft Visual Studio Code\S.E. Github\Software-Engineering\bin\Debug\Twilio.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Software-Engineering.exe.config
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Software-Engineering.exe
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Software-Engineering.pdb
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\MySql.Data.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Twilio.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Google.Protobuf.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Renci.SshNet.dll
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\MySql.Data.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\bin\Debug\Twilio.xml
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software-Engineering.csprojAssemblyReference.cache
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Bedside_System.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Central_Station.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Contact.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.HistoryChecker.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Management.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.PatientModuleReadingsConfiguration.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.Properties.Resources.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.ZoomGraph.resources
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software-Engineering.csproj.GenerateResource.cache
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software-Engineering.csproj.CopyComplete
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software-Engineering.exe
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software-Engineering.pdb
+C:\Users\Noah\Desktop\SE-Project\Software-Engineering\obj\Debug\Software_Engineering.adminChecker.resources

@@ -792,8 +792,8 @@ namespace Software_Engineering
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Management management = new Management();
-            management.Show();
+            adminChecker adminCheckerA = new adminChecker();
+            adminCheckerA.Show();
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)

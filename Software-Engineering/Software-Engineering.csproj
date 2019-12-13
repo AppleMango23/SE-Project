@@ -64,6 +64,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminChecker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminChecker.Designer.cs">
+      <DependentUpon>adminChecker.cs</DependentUpon>
+    </Compile>
     <Compile Include="BedSide.cs" />
     <Compile Include="BedSideHandler.cs" />
     <Compile Include="Bedside_System.cs">
@@ -127,6 +133,9 @@
     <Compile Include="ZoomGraph.Designer.cs">
       <DependentUpon>ZoomGraph.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adminChecker.resx">
+      <DependentUpon>adminChecker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bedside_System.resx">
       <DependentUpon>Bedside_System.cs</DependentUpon>
     </EmbeddedResource>

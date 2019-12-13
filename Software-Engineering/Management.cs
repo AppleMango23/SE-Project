@@ -146,6 +146,7 @@ namespace Software_Engineering
         //Add new patient button
         private void button5_Click(object sender, EventArgs e)
         {
+
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
 
